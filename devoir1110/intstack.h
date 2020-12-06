@@ -34,12 +34,12 @@ class IntStack{
         bool is_full(){
             return top == size;
         }
-        void printstack(){
-            cout << "[ " ;
-            for ( int i; i<top;i++ ){
-                cout << tab[i] << " \n";
+        void print(){
+            cout << "[" ;
+            for ( int i=0; i<top;i++ ){
+                cout << tab[i] << " ";
             }
-            cout << "[";
+            cout << "[ \n";
         }
 
     private :
