@@ -4,7 +4,7 @@ RM=rm -f
 
 liste :  main.o test.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
-	$(RM) test.o stack.o rpn_eval.o
+	$(RM) test.o main.o
 
 
 main.o : main.cpp test.h intlist.h
