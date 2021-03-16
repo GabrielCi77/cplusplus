@@ -1,3 +1,5 @@
+//vr: c'est très bien d'avoir cité les programmes (d'Internet) que tu as utilisés 
+
 /*
 A simple sound library for CSE 20211 by Douglas Thain (dthain@nd.edu).
 This work is made available under the Creative Commons Attribution license.

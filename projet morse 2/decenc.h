@@ -1,8 +1,12 @@
+#pragma once
+// vr: protège tes fichiers d'entête contre l'inclusion multiple soit par ifndef/define/endif soit par le pragme once (il n'est pas normalisé mais est utilisable)
 #include <string>
 #include <cmath>
 using namespace std;
 
+// vr: ce code manque de commentaires
 class Node {
+  friend void delete_all_nodes(Node*); // vr: destructeur de Node
     public :
         void insert (char,string);
         char intolettre(string morse){
@@ -31,12 +35,15 @@ class Node {
             }
             throw("Problème: le code n'est pas en morse");
         }
+
     private :    
         char lettre = '\0';
         Node* clptr [2] ={nullptr,nullptr};
 };
 
 inline void Node::insert(char a,std::string code){
+  // vr: pourquoi recopier la string code qui est déjà une copie ?
+
     string code_=code;
     if (code_.size()==0){
         lettre = a;
@@ -49,6 +56,7 @@ inline void Node::insert(char a,std::string code){
                     clptr[0]->insert(a,code_);
                 }
                 else{
+		  // vr: il faut détruire les Node (un destructeur ne fonctionnera pas il faut une fonction qui prend en argument l'arbre à détruire
                     Node* court= new Node;
                     clptr[0] = court;
                     code_.erase(0,1);
