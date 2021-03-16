@@ -1,0 +1,17 @@
+détruire l'arbre de Node créé pqr decode (on peut aussi lui mettre la class Node en sous classe private)
+decenc.cpp:// vr: destructeur de l'arbre des Node
+decenc.cpp:// vr: mettre des commentaires
+decenc.cpp:  // vr: il faut séparer le code en fonction, faire une fonction (ou une méthode de la classe) qui crée l'arbre à partir du dictionnaire de Morse
+decenc.cpp:  // vr: utiliser un arbre de Node pour le décodage c'est très bien, ce serait intéressant de le comparer avec l'utilisation directe de la map pour voir ce que l'on gagne en temps par rapport à un dictionnaire avec une string comme key
+decenc.cpp:    // vr: ce n'est pas avec un destructeur de Node que tu peux détruire l'arbre des Node
+decenc.h:// vr: protège tes fichiers d'entête contre l'inclusion multiple soit par ifndef/define/endif soit par le pragme once (il n'est pas normalisé mais est utilisable)
+decenc.h:// vr: ce code manque de commentaires
+decenc.h:  friend void delete_all_nodes(Node*); // vr: destructeur de Node
+decenc.h:  // vr: pourquoi recopier la string code qui est déjà une copie ?
+decenc.h:		  // vr: il faut détruire les Node (un destructeur ne fonctionnera pas il faut une fonction qui prend en argument l'arbre à détruire
+inout.cpp:// vr: on peut faire une classe pour  de ranger ensemble ces fonctions de wav 
+inout.cpp:      // vr: manque le décodage de wav vers morse
+morse.cpp:#include "decenc.h" // vr: ok si protection des fichiers d'entête contre l'inclusion multiple
+morse.cpp:// vr: ne pas mettre de code directement dans le main, mais y appeler des fonctions ou des méthodes définies en dehors du fichier main - comme cela tu peux réutiliser ton code - 
+wavfile.cpp://vr: c'est très bien d'avoir cité les programmes (d'Internet) que tu as utilisés 
+

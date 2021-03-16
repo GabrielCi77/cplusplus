@@ -1,11 +1,13 @@
 #include <string>
 #include <iostream>
+#include "decenc.h" // vr: ok si protection des fichiers d'entête contre l'inclusion multiple
 #include "decenc.h"
 #include "inout.h"
 
 using namespace std;
 
-int main(){
+// vr: ne pas mettre de code directement dans le main, mais y appeler des fonctions ou des méthodes définies en dehors du fichier main - comme cela tu peux réutiliser ton code - 
+void menu_morse () {
     char c; //utile pour le choix
     cout << "Entrez e pour encoder ou d pour décoder :"<< endl;
     cin >> c;
@@ -61,7 +63,7 @@ int main(){
                     getline(cin,chemin);
                     string morse=getwav(chemin);
                     string dec = decode(morse);
-                    cout << morse;
+                    cout << morse << endl; 
                     break;
                 }
                 case 'm':{
@@ -86,6 +88,11 @@ int main(){
             }
         }
     }
+
+}
+
+int main(){
+  menu_morse();
     return 0;
  }
  

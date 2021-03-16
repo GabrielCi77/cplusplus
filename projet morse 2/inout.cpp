@@ -5,6 +5,7 @@
 #include <cmath>
 using namespace std;
 
+// vr: on peut faire une classe pour  de ranger ensemble ces fonctions de wav 
 const int NUM_SAMPLES = (WAVFILE_SAMPLES_PER_SECOND);
 
 string getchemin(string chemin){
@@ -44,7 +45,8 @@ string getwav(string chemin){
     string morse;
     audio.open(chemin, ios::in);
     if (audio.is_open()){
-
+      // vr: manque le décodage de wav vers morse
+      morse = "-. --- -      -.-- . -      .. -- .--. .-.. . -- . -. - . -..";
     }
     else{
         throw "Pas de fichier au chemin specifié";
